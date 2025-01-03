@@ -30,9 +30,40 @@ export const Signup = async(req,res) =>{
     })
   } catch (error) {
     console.log("error while signing up",error)
-    res.status(401).json({
+     return res.status(401).json({
       msg: "error while signing up"
     })
   }
 
+}
+
+export const Singin = async (req,res)=>{
+  const body = req.body
+  try {
+    const checkUser = await user.findOne({email:body.email})
+    if(!checkUser || checkUser===null){
+      return res.status(403).json({
+        msg:"user does not exist. Please signUp first!"
+      })
+    }
+    const comparePass = await bcrypt.compare(body.password,checkUser.password)
+    if(!comparePass || comparePass===null){
+      return res.status(403).json({
+        msg:"You entered wrong Password"
+      })
+    }
+
+    const token =  jwt.sign(checkUser._id.toHexString(),env.SECRET_KEY)
+    res.send({
+      msg:"User signIn successfully",
+      token:token
+    })
+    
+  } catch (error) {
+    console.log("errorr while signIn", error)
+    res.status(401).json({
+      msg:"error occured while singin"
+    })
+    
+  }
 }
