@@ -6,7 +6,11 @@ const env = {
   PORT: process.env.PORT || 8080,
   MONGO_URI: process.env.MONGO_URI || "",
   SECRET_KEY: process.env.SECRET_KEY || "",
-  SALT: parseInt(process.env.SALT) || 10
+  SALT: parseInt(process.env.SALT) || 10,
+  AWS_ACCESS_KEY: process.env.AWS_ACCESS_KEY || "",
+  AWS_SECRET_KEY: process.env.AWS_SECRET_KEY || "",
+  AWS_REGION: process.env.AWS_REGION || "",
+  AWS_DOMAIN: process.env.AWS_DOMAIN || "",
 }
 
 export default env

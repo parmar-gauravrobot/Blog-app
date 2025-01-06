@@ -37,7 +37,7 @@ export const Signup = async(req,res) =>{
 
 }
 
-export const Singin = async (req,res)=>{
+export const Signin = async (req,res)=>{
   const body = req.body
   try {
     const checkUser = await user.findOne({email:body.email})
@@ -52,6 +52,8 @@ export const Singin = async (req,res)=>{
         msg:"You entered wrong Password"
       })
     }
+
+    
 
     const token =  jwt.sign(checkUser._id.toHexString(),env.SECRET_KEY)
     res.send({
