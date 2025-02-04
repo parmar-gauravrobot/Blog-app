@@ -35,8 +35,11 @@ export const  createBlog=async(req,res)=>{
 
 export const readAllBlogs = async(req,res)=>{
   try {
-    const response = await blog.find()
-    res.json()
+    const response = await blog.find().populate({
+      path:"createdBy",
+      select: "name"
+    })
+    res.json(response)
     
   } catch (error) {
     //403 for catch errror
@@ -51,7 +54,10 @@ export const readAllBlogs = async(req,res)=>{
 
 export const readMyBlogs = async(req,res)=>{
   try {
-    const response = await blog.find({createdBy:req.userId})
+    const response = await blog.find({createdBy:req.userId}).populate({
+      path:"createdBy",
+      select: "name"
+    })
     res.json(response)
     
   } catch (error) {

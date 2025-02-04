@@ -3,6 +3,7 @@ import env from "../../../infrastructure/env.js"
 import user from "../../config/schemas/user.schema.js"
 import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken"
+import { sendOtpMail } from "../../lib/nodemailer.js"
 
 
 export const Signup = async(req,res) =>{
@@ -37,6 +38,19 @@ export const Signup = async(req,res) =>{
 
 }
 
+export const generateOtp = async(req,res)=>{
+  const body = req.body;
+  try {
+    await sendOtpMail(body.email,body.otp)
+    res.json({
+      msg: "otp sent"
+    })
+  } catch (error) {
+    console.log(error)
+    res.status(401).json("error while sending otp")
+  }
+}
+
 export const Signin = async (req,res)=>{
   const body = req.body
   try {
@@ -58,7 +72,8 @@ export const Signin = async (req,res)=>{
     const token =  jwt.sign(checkUser._id.toHexString(),env.SECRET_KEY)
     res.send({
       msg:"User signIn successfully",
-      token:token
+      token:token,
+      username: checkUser.username
     })
     
   } catch (error) {
