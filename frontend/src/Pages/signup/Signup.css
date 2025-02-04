@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  height: auto;
+  font-family: 'Chalkboard', 'Comic Sans MS', cursive, sans-serif;
+  background-color: azure;
+  
+}
+
+
+.form-container{
+  /* border: 2px solid greenyellow; */
+  /* margin: 3em; */
+  text-align: center;
+  /* width: 400px; */
+  /* display: grid;
+  grid-auto-columns: auto auto; */
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.forms{
+  width: 100%;
+}
+
+img{
+  height: 400px;
+  width: 500px
+}
+
+.image{ 
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-photo/anthropomorphic-robot-performing-regular-human-job-future_23-2151043458.jpg?t=st=1736762614~exp=1736766214~hmac=2e33c23f2b23f66ab47d5ed2c52fb407b5a1caa250a156077cccba79972286d7&w=900");
+}
+
+.heading{
+  font-family: 'Chalkboard', 'Comic Sans MS', cursive, sans-serif;
+  font-size: 36px;
+  color:#2A242F;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;  
+  gap: 1em;
+  text-align: center;
+}
+
+/* .signup-form{
+  text-align: center;
+} */
+/* .card-container{
+  text-align: center;
+} */
+label {
+  /* text-align:  left;   */
+  /* align-items: start; */
+  font-weight: bold;
+  
+
+
+}
+label p{
+  text-align: left;
+  margin-left: 13.5em;
+}
+
+/* .labelFormTitle{
+  align-items: flex-start;
+  padding-left: 0cm;
+  margin-left: 0cm;
+
+} */
+
+input ,textarea{
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 190px;
+}
+input,textarea:focus {
+  border-color: #1b0d2b;
+}
+
+
+#submit-btn {
+  text-align: center;
+  align-self: center;
+  width: 10em;
+  background-color: #06D3FC;  /* Purple background */
+  color: white;  /* White text */
+  border: none;  /* Remove default border */
+  padding: 10px 20px;  /* Add padding for size */
+  font-size: 16px;  /* Set font size */
+  font-weight: bold;  /* Bold text */
+  border-radius: 15px;  /* Rounded corners */
+  cursor: pointer;  /* Pointer cursor on hover */
+  transition: all 0.3s ease;  /* Smooth transition for hover and active states */
+  font-family: 'Chalkboard', 'Comic Sans MS', cursive, sans-serif;
+  transition: all ease .8s;
+
+}
+
+#submit-btn:hover {
+  background-color: #527ffb;  /* Change background color on hover */
+  
+}
+
+#submit-btn:active {
+  background-color: #1a3fe4;  /* Darken color on click */
+  transform: scale(0.98);  /* Slightly shrink the .submit-btn when clicked */
+}
+
+a{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}

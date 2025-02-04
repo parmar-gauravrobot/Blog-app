@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  height: auto;
+  background-color: azure;
+  
+}
+.create-form h1{
+padding-top: 2em;
+}
+
+.create-form-container{
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  flex-direction: row;
+  padding-top: 2.7em;
+  height: 92vh;
+}
+.create-form{
+  width: 100%;
+}
+img{
+  height: 100%;
+  width: 100%
+}
+.create-image{ 
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://cdn.pixabay.com/photo/2024/06/08/20/39/robot-8817528_1280.jpg")no-repeat center center;
+  background-size: cover;
+}
+#create-btn{
+  width: 70px;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  flex:center
+}
+
+
+
+
+
+
+
+
+
+
+
+img{
+  height: 400px;
+  width: 500px
+}
+
+.image{ 
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://img.freepik.com/free-photo/anthropomorphic-robot-performing-regular-human-job-future_23-2151043458.jpg?t=st=1736762614~exp=1736766214~hmac=2e33c23f2b23f66ab47d5ed2c52fb407b5a1caa250a156077cccba79972286d7&w=900");
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;  
+  gap: 1em;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+

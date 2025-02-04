@@ -1,0 +1,27 @@
+
+
+.parent{
+  display: flex;
+  padding: 3em;
+  background-color: white;
+}
+.leftPart{
+width: 70%;
+}
+.leftPart img{
+  height: auto;
+  width: 750px;
+}
+.rightPart{
+
+
+  width: 30%;
+  position: fixed;
+  padding-left: 900px;
+  padding-top: 5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  font-weight: lighter;
+  
+}
